@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JS함수 - 리턴의 활용</title>
+    <script>
+       /*////////////////////////////////////////
+           함수명:chkAge
+           기능:입력된 나이의 선년여부에 따라 메시지 출력!
+       */////////////////////////////////////////
+       function chkAge(age){
+       // 1 함수호출 전달값 확인
+           console.log("나이체크"+age);
+           
+           //2. 데이터 유효성 검사
+           // 숫자 여부 확인:isNaN(값) -> 숫자가 아니니? 응(true)
+           if(isNaN){
+               alert("숫자만 입력하세요");
+           }////if////////
+           ////숫자아니 한계(0~200)
+           else if(age < 0 || age > 200){
+               alert("나이는 사람나이로 해주세요!")
+           }////else if//////
+           //위 기준에서 통과된경우
+           else{
+               //성년 여부 검사함수를 호출
+               var res = reAct(age);
+               console.log("결과:"+res);
+               
+               
+               
+               
+               
+               //결과 찍기
+               //출력대상 : #msg
+               var msg = document.getElementById("msg");
+               if(res){
+                   msg.innerHTML = "당신은 성년입니다.";
+               }///if
+               
+               else{
+                   msg.innerHTML = "당신은 미성년입니다.";
+               }////else
+               
+               
+           }/////elsa//////
+           
+           
+       }////////chkAge(age)///////////////////////////
+       //////////////////////////////////////////
+       
+        /*////////////////////////////////////////
+            함수명:reAct
+            기능:
+        */////////////////////////////////////////
+        function reAct(age){
+            //1. 함수호출 전달값
+            console.log("전달된나이:"+age);
+            //2. 성년여부 검사
+            var res;//성년결과변수
+            if(age>=19){// 19세 이상
+                res = true;
+            }///if
+            else{ //미성년
+                res = false;
+            }//// else////
+            
+            //3, 결과 리턴
+            return res;
+            
+            
+        }////////reAct///////////////////////////
+        //////////////////////////////////////////
+        
+        
+        
+    </script>
+</head>
+<body>
+   <h1>당신의 나이를 만으로 입력하세요!</h1>
+    <input type="text" id="age">
+    <input type="button" value="구분검사" onclick="chkAge(document.getElementById('age').value)">
+    <h2 id="msg"></h2>
+    
+   
+   
+   
+   
+    
+</body>
+</html>

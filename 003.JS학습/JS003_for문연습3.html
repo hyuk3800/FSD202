@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For문 옵션</title>
+    <style>
+        .forCls img {
+
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+
+
+    <script>
+        /*/////////////////
+        함수명: addNum
+        기능: for문으로 숫자이미지를 추가한다
+        
+      */ /////////  
+        function addNum(num) { //num은 전달변수 (호출구분)
+            // 1. 함수호출확인
+            console.log("함수호출!!" + num);
+            //2 변경 대상 .forCls
+            var tg = document.getElementsByClassName("forCls").item(num);
+
+            //내용초기화(html지우기)
+            //   tg.innerHTML = "";//빈문자
+
+
+
+            //3. 변경내용 : 변경 대상내부에 이미지태그를 for문으로 넣어줌
+            for (var i = 1; i <= 10; i++) {
+
+
+                //순번 빼돌리기
+                if (num ===1 && (i === 4 || i === 7)) continue;
+                //for문안에 조건문과 함께 continue를 쓰면
+                //조건에 맞는 순번 뺴고 계속해
+                
+                if(num===2 && i===6)break;
+                //for문 안에 조건문과 함께 break를 쓰면
+                //조건에 맞는 순번에서 for문을 빠져 나감
+                
+                // -> continue와 break는 실행문 위에 있어야한다.
+                //이유: 실행문을 실행하기 전에 조건을 걸러야 하므로
+                
+                
+                
+                
+                //console.log("반복"+i);
+                //변경대상 이미지 넣기
+                tg.innerHTML +=
+                    '<img src="images/num/num_0' + i + '.png" alt="1">';
+
+
+
+
+            } //for문//
+
+
+        } ////////////addNum 함수/////////////////////////////////
+        //////////////////////////////////////////////////
+
+    </script>
+
+</head>
+
+<body>
+    <h1>for문 옵션</h1>
+        <h2>기본for문</h2>
+    <div class="forCls">
+        <button onclick="addNum(0)">함수호출1</button>
+
+    </div>
+
+        <h2>4번과 7번빼고 돌리기</h2>
+    <div class="forCls">
+        <button onclick="addNum(1)">함수호출2</button>
+    </div>
+        <h2>5번까지만 돌리기</h2>
+    <div class="forCls">
+            <button onclick="addNum(2)">함수호출2</button>
+    </div>
+
+</body>
+
+</html>

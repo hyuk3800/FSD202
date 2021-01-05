@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <title>for문 연습1 - 파란상자에 미니언즈 집어넣기</title>
+    <style>
+    
+        #Bcaes{
+            border: 20px ridge blue;
+            min-height: 250px;
+            /*최소높이를 유지하다가 내용이 많아지면 높이값 늘어남*/
+        }
+        .mini{
+            cursor: pointer;
+            /*손가락 모양*/
+            border: 5px dotted #fff;
+        }
+    
+        /*마우스 오버시*/
+        .mini:hover{
+            border-color: red;
+        }
+        
+    </style>
+    <script>
+    /*/////////////////////////////////////
+    함수명 : insMini
+    기능 : 미니언즈 파란박스에 넣기
+    *//////////////////////////////////////
+        function insMini(){
+            //1.호출여부 확인
+            console/log("미니언즈!!!");
+            
+            // 2. 파란박스에 이미지 요소 넣기
+            //대상: 파란박스
+           var tg = document.getElementById("Bcase")
+            //for문으로 코드를 반복시킴
+           /* for(시;한;증){실행코드}*/
+            for(var i=0;i<100;i++){                            
+                //실행코드
+                //console.log("순번:"+i);
+                tg.innerHTML += 
+           '<img src="images/Minions.png" alt="미니">';
+                
+            }//for문///
+            
+            
+           
+            
+            // += 대입연산자를 사용하여 태그를 추가한다.
+            
+        }//////insMini함수//////////
+    
+    </script>
+    
+    
+</head>
+<body>
+    
+    <img src="images/Minions.png" class="mini" alt="미니" title="나를 클릭하면 한개씩 가방에 들어간다" onclick="insMini()">
+    <img src="images/Minions.png" class="mini" alt="미니" title="나를 클릭하면 100개씩 가방에 들어간다" onclick="insMini()">
+    <!--파란상자-->
+    <div id="Bcase">
+        
+        
+    </div>
+    
+    
+</body>
+</html>
